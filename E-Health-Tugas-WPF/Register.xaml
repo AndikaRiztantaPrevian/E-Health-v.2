@@ -1,0 +1,51 @@
+﻿<Window x:Class="Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:E_Health_Tugas_WPF"
+        mc:Ignorable="d"
+        Title="Login"
+        Width="500"
+        Height="650"
+        ResizeMode="NoResize"
+        WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,1,0,-1">
+
+        <TextBlock HorizontalAlignment="Center" Margin="0,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Width="254" TextAlignment="Center" FontSize="18"><Run Text="Daftarkan diri anda dan mulai menggunakan aplikasi"/><LineBreak/><Run Text="E-Health"/></TextBlock>
+
+
+        <Label Content="Email" HorizontalAlignment="Left" Margin="80,161,0,0" VerticalAlignment="Top" FontSize="14" FlowDirection="LeftToRight"/>
+
+        <TextBox x:Name="EmailInput" HorizontalAlignment="Center" Margin="0,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="7" Width="340" Height="40" BorderThickness="0,0,0,1" MaxLines="1000" FontSize="14" Text=""/>
+
+
+        <Label Content="Nama Lengkap" HorizontalAlignment="Left" Margin="80,247,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" FontSize="14"/>
+
+        <TextBox x:Name="nameInput" HorizontalAlignment="Center" Margin="0,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="7" Width="340" Height="40" BorderThickness="0,0,0,1" MaxLines="1000" FontSize="14"/>
+
+
+        <Label Content="Password" HorizontalAlignment="Left" Margin="80,334,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" FontSize="14"/>
+        
+        <PasswordBox x:Name="PasswordInput" HorizontalAlignment="Center" Margin="0,364,0,0" VerticalAlignment="Top" Padding="7" Width="340" Height="40" BorderThickness="0,0,0,1" FontSize="14"/>
+
+        
+        <Label Content="Konfirmasi Password" HorizontalAlignment="Left" Margin="80,422,0,0" VerticalAlignment="Top" FlowDirection="LeftToRight" FontSize="14"/>
+
+        <PasswordBox x:Name="PassworConfirmationInput" HorizontalAlignment="Center" Margin="0,452,0,0" VerticalAlignment="Top" Padding="7" Width="340" Height="40" BorderThickness="0,0,0,1" FontSize="14"/>
+
+        
+        <Button x:Name="SubmitButton" Content="DAFTAR" HorizontalAlignment="Center" Margin="0,522,0,0" Background="Transparent" Cursor="Hand" BorderBrush="Black" VerticalAlignment="Top" Width="340" Height="50" FontSize="15" FontWeight="SemiBold" />
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="148,594,0,0" TextWrapping="Wrap" Text="Sudah Memiliki akun?" VerticalAlignment="Top" FontSize="12" FontWeight="Light" FlowDirection="LeftToRight"/>
+
+        <TextBlock x:Name="LoginButton" MouseLeftButtonDown="LoginButton_Click" HorizontalAlignment="Left" Margin="261,594,0,0" TextWrapping="Wrap" Text="Masuk Disini!" VerticalAlignment="Top" FontSize="12" FontWeight="SemiBold" Cursor="Hand" FlowDirection="LeftToRight"/>
+
+
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Candara Light" BorderThickness="0,0,0,0" Cursor="Hand" FontSize="30" Width="45" Height="45"/>
+
+    </Grid>
+
+</Window>

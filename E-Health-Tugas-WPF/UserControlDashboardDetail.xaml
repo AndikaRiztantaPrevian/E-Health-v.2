@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="UserControlDashboardDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_Health_Tugas_WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+
+    <Grid>
+        <Button x:Name="CloseButton" Click="CloseButton_Click" Content="X" HorizontalAlignment="Left" Margin="545,10,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Candara Light" BorderThickness="0,0,0,0" Cursor="Hand" FontSize="30" Width="45" Height="45"/>
+
+        <Grid>
+
+            <Rectangle Fill="#FF2E797E" Margin="10,19,372,554">
+
+                <Rectangle.Effect>
+
+                    <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                </Rectangle.Effect>
+
+            </Rectangle>
+
+            <TextBlock Text="{Binding DateTimeNow}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="30,25,0,0"/>
+
+        </Grid>
+
+        <Grid Height="100" Width="280" Margin="10,64,310,436">
+            <Rectangle Fill="#2E797E" >
+
+                <Rectangle.Effect>
+
+                    <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                </Rectangle.Effect>
+
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" Text="ANTRIAN" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="18"/>
+            <TextBlock x:Name="QueueNow" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" Text="0" Foreground="White" FontWeight="Medium" VerticalAlignment="Top" FontSize="20"/>
+        </Grid>
+
+        <Grid Height="100" Width="280" Margin="310,64,10,436">
+            <Rectangle Fill="#2E797E" >
+
+                <Rectangle.Effect>
+
+                    <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                </Rectangle.Effect>
+
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Center" Margin="0,21,0,0" TextWrapping="Wrap" Text="TOTAL" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="18"/>
+            <TextBlock x:Name="TotalQueue" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" Text="0" Foreground="White" FontWeight="Medium" VerticalAlignment="Top" FontSize="20"/>
+        </Grid>
+
+        <Grid Height="400" Width="580" Margin="10,182,10,18">
+            <Rectangle Fill="#2E797E" >
+
+                <Rectangle.Effect>
+
+                    <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                </Rectangle.Effect>
+
+            </Rectangle>
+            <Button x:Name="buttonSkip" Click="ButtonSkip_Click" Content="Lewati" HorizontalAlignment="Left" Margin="15,16,0,0" VerticalAlignment="Top" Height="37" Width="266" FontSize="16" BorderThickness="0,0,0,0" Cursor="Hand" Background="White" />
+            <Button x:Name="buttonFinish" Click="ButtonFinish_Click" Content="Selesai" HorizontalAlignment="Left" Margin="300,16,0,0" VerticalAlignment="Top" Width="265" Height="37" FontSize="16" Foreground="White" Background="#FF27676B" BorderThickness="0,0,0,0" Cursor="Hand"/>
+
+            <Grid Height="320" Width="550" Margin="10,70,10,18">
+
+                <DataGrid x:Name="ConsultationQueueGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="Nama" Binding="{Binding name}" Width="*" />
+
+                        <DataGridTextColumn Header="Status" Binding="{Binding status}" Width="*" />
+
+                        <DataGridTextColumn Header="No.Antrian" Binding="{Binding no_queue}" Width="*" />
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

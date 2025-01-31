@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="UserControlPemesanan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_Health_Tugas_WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+
+        <Button x:Name="CloseButton" Click="CloseButton_Click" Content="X" HorizontalAlignment="Left" Margin="545,10,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Candara Light" BorderThickness="0,0,0,0" Cursor="Hand" FontSize="30" Width="45" Height="45"/>
+
+        <Grid>
+
+            <Rectangle Fill="#FF2E797E" Margin="10,19,372,554">
+
+                <Rectangle.Effect>
+
+                    <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                </Rectangle.Effect>
+
+            </Rectangle>
+
+            <TextBlock Text="{Binding DateTimeNow}" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="30,25,0,0"/>
+
+            <Grid Width="580" Margin="10,68,10,10">
+
+                <Rectangle Fill="#FF2E797E">
+
+                    <Rectangle.Effect>
+
+                        <DropShadowEffect BlurRadius="5" Opacity="1" ShadowDepth="2"/>
+
+                    </Rectangle.Effect>
+
+                </Rectangle>
+
+                <TabControl Margin="18,23,18,21">
+
+                    <TabItem Header="Pesanan">
+
+                        <Grid Background="#F4f4f4f4">
+
+                            <GroupBox Header="Identitas Pembeli" Margin="10,10,10,322">
+
+                                <Grid>
+
+                                    <Label Foreground="Black" Content="Nama Lengkap" HorizontalAlignment="Left" Margin="8,16,0,0" VerticalAlignment="Top" FontSize="14" FlowDirection="LeftToRight"/>
+                                    <TextBox Foreground="Black" Background="Transparent" x:Name="NameInput" HorizontalAlignment="Left" Margin="8,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="7" Width="160" Height="34" BorderThickness="0,0,0,1" MaxLines="1000" FontSize="14" Text="" Cursor="IBeam"/>
+
+                                    <Label Foreground="Black" Content="Alamat" HorizontalAlignment="Left" Margin="174,16,0,0" VerticalAlignment="Top" FontSize="14" FlowDirection="LeftToRight"/>
+                                    <TextBox Foreground="Black" Background="Transparent" x:Name="AddresInput" HorizontalAlignment="Center" Margin="0,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="7" Width="160" Height="34" BorderThickness="0,0,0,1" MaxLines="1000" FontSize="14" Text="" Cursor="IBeam"/>
+
+                                    <Label Foreground="Black" Content="No. Handphone" HorizontalAlignment="Left" Margin="338,16,0,0" VerticalAlignment="Top" FontSize="14" FlowDirection="LeftToRight"/>
+                                    <TextBox Foreground="Black" Background="Transparent" x:Name="PhoneNumberInput" HorizontalAlignment="Left" Margin="338,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Padding="7" Width="160" Height="34" BorderThickness="0,0,0,1" MaxLines="1000" FontSize="14" Text="" Cursor="IBeam"/>
+
+                                </Grid>
+
+                            </GroupBox>
+
+                            <GroupBox Header="Obat" Margin="10,146,10,68">
+
+                                <Grid>
+
+                                    <Button x:Name="ButtonMedician1" Content="Paracetamol" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <Button x:Name="ButtonMedician2" Content="Mylanta" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <Button x:Name="ButtonMedician3" Content="Aclidinium" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Left" Margin="342,10,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <Button x:Name="ButtonMedician4" Content="Amaryl" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <Button x:Name="ButtonMedician5" Content="Ambroxol Indofarma" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Center" Margin="0,44,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <Button x:Name="ButtonMedician6" Content="Amlodipine" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Left" Margin="342,44,0,0" VerticalAlignment="Top" Height="29" Width="154" Cursor="Hand"/>
+
+                                    <ListBox x:Name="ListOrder" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,86,342,35"/>
+
+                                    <TextBlock HorizontalAlignment="Left" Margin="266,187,0,0" TextWrapping="Wrap" Text="Total Yang Perlu Dibayar : " VerticalAlignment="Top"/>
+
+                                    <TextBlock x:Name="TotalPriceOrder" HorizontalAlignment="Left" Margin="408,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="95"/>
+
+                                </Grid>
+
+                            </GroupBox>
+
+                            <Button x:Name="ButtonSubmit" Content="Simpan" BorderThickness="0" Background="#27676B" Foreground="White" HorizontalAlignment="Left" Margin="407,406,0,0" VerticalAlignment="Top" Height="34" Width="121" Cursor="Hand"/>
+
+                        </Grid>
+
+                    </TabItem>
+
+                    <TabItem Header="Riwayat Pemesanan">
+
+                        <Grid Background="#FFE5E5E5">
+
+                            <DataGrid x:Name="ConsultationQueueGrid" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                                <DataGrid.Columns>
+
+                                    <DataGridTextColumn Header="Nama" Binding="{Binding name}" Width="*" />
+
+                                    <DataGridTextColumn Header="Alamat" Binding="{Binding address}" Width="*" />
+
+                                    <DataGridTextColumn Header="No. Handphone" Binding="{Binding phone_number}" Width="*" />
+
+                                    <DataGridTextColumn Header="Total Pembayaran" Binding="{Binding total_payment}" Width="*" />
+
+                                    <DataGridTextColumn Header="Tanggal" Binding="{Binding date}" Width="*" />
+
+                                </DataGrid.Columns>
+
+                            </DataGrid>
+
+                        </Grid>
+
+                    </TabItem>
+
+                </TabControl>
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>
